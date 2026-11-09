@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="255" viewBox="0 0 340 255" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">하루 계획 일러스트</title>
+  <desc id="desc">체크가 표시된 계획표와 연필, 따뜻한 색의 작은 식물</desc>
+  <ellipse cx="174" cy="228" rx="139" ry="13" fill="#C7DCC9" opacity=".55"/>
+  <circle cx="262" cy="50" r="24" fill="#F4E8C7" opacity=".9"/>
+  <circle cx="54" cy="85" r="8" fill="#D2E9D6"/>
+  <path d="m296 103 5-12 5 12 12 5-12 5-5 12-5-12-12-5 12-5Z" fill="#FFFFFF" opacity=".8"/>
+  <g transform="rotate(-9 159 126)">
+    <rect x="70" y="21" width="175" height="207" rx="19" fill="#7DAD8D" opacity=".23"/>
+    <rect x="66" y="14" width="175" height="207" rx="19" fill="#FFFDF6"/>
+    <rect x="117" y="8" width="75" height="21" rx="10" fill="#F4BE87"/>
+    <rect x="143" y="1" width="23" height="18" rx="8" fill="#DB9B68"/>
+    <path d="M104 58h103" stroke="#D8E8DA" stroke-width="7" stroke-linecap="round"/>
+    <path d="M104 78h75" stroke="#E5EFE4" stroke-width="6" stroke-linecap="round"/>
+    <rect x="98" y="105" width="26" height="26" rx="8" fill="#63A27B"/>
+    <path d="m105 118 6 6 10-13" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M137 113h60M137 125h42" stroke="#BFD2C2" stroke-width="6" stroke-linecap="round"/>
+    <rect x="98" y="146" width="26" height="26" rx="8" fill="#D8E9DC"/>
+    <path d="m105 158 6 6 10-13" stroke="#64A37D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M137 154h60M137 166h45" stroke="#CEDFCE" stroke-width="6" stroke-linecap="round"/>
+    <rect x="98" y="184" width="26" height="26" rx="8" stroke="#C9DECE" stroke-width="2.5"/>
+    <path d="M137 193h44" stroke="#D5E2D6" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(23 264 150)">
+    <rect x="254" y="100" width="16" height="105" rx="7" fill="#EFC88E"/>
+    <rect x="254" y="105" width="16" height="16" fill="#ED9B85"/>
+    <rect x="254" y="119" width="16" height="4" fill="#FCF7DE"/>
+    <path d="m254 205 8 19 8-19h-16Z" fill="#D3AD80"/>
+    <path d="m259 218 3 6 3-6h-6Z" fill="#4D6560"/>
+  </g>
+  <g>
+    <path d="M283 204h40l-5 24h-30l-5-24Z" fill="#CD9581"/>
+    <path d="M281 200h44v9h-44z" rx="3" fill="#DDA994"/>
+    <path d="M303 200c-2-24-12-33-22-36 15-4 25 5 25 14-1-25 5-39 17-46-3 20-10 36-17 46 13-12 23-10 29-7-11 13-20 17-32 29Z" fill="#72A98A"/>
+    <path d="M304 200c0-26 1-49 13-67" stroke="#4D8F72" stroke-width="3" stroke-linecap="round"/>
+    <path d="M305 181c-13-20-25-18-31-13 6 14 19 18 31 13Z" fill="#95BD91"/>
+    <path d="M308 176c8-17 18-21 26-19-4 15-15 20-26 19Z" fill="#86B695"/>
+  </g>
+  <path d="m48 177 5-10 5 10 10 5-10 5-5 10-5-10-10-5 10-5Z" fill="#F6D5AB"/>
+</svg>

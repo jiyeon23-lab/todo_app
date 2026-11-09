@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f4" />
+    <meta name="description" content="업무, 공부, 개인 일정을 한눈에 정리하는 나만의 할 일 앱" />
+    <title>오늘의 체크 · 나만의 할 일 앱</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="앱 메뉴">
+        <a class="brand" href="./index.html" aria-label="오늘의 체크 홈">
+          <span class="brand-mark" aria-hidden="true">✓</span>
+          <span class="brand-copy"><strong>오늘의 체크</strong><small>little steps, big days</small></span>
+        </a>
+
+        <div class="sidebar-section-label">내 계획</div>
+        <nav class="side-nav" aria-label="할 일 보기">
+          <button class="nav-button is-current" type="button" data-scope="all" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">▦</span><span>모든 할 일</span><b id="count-all">0</b>
+          </button>
+          <button class="nav-button" type="button" data-scope="today">
+            <span class="nav-icon" aria-hidden="true">☀</span><span>오늘 할 일</span><b id="count-today">0</b>
+          </button>
+          <button class="nav-button" type="button" data-scope="upcoming">
+            <span class="nav-icon" aria-hidden="true">▤</span><span>예정된 할 일</span><b id="count-upcoming">0</b>
+          </button>
+          <button class="nav-button" type="button" data-scope="completed">
+            <span class="nav-icon" aria-hidden="true">✓</span><span>완료한 할 일</span><b id="count-completed">0</b>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="note-card">
+            <span class="note-symbol" aria-hidden="true">✳</span>
+            <p>완벽하지 않아도 괜찮아요.<br />오늘도 한 가지씩!</p>
+            <span>ONE STEP AT A TIME</span>
+          </div>
+          <p class="storage-note">할 일은 이 브라우저에 자동 저장돼요.</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="today-date" id="today-date">오늘의 날짜</div>
+          <div class="topbar-tag"><span aria-hidden="true">✦</span> 나의 작은 성취 기록</div>
+        </header>
+
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">MAKE TODAY COUNT</p>
+            <h1 id="hero-title">오늘의 할 일,<br /><em>가볍게</em> 시작해요.</h1>
+            <p class="hero-description">머릿속의 계획을 하나씩 꺼내 놓고,<br />완료할 때마다 기분 좋은 체크를 남겨보세요.</p>
+          </div>
+          <img class="hero-art" src="images/plan-illustration.svg" alt="체크 표시가 있는 메모와 작은 식물 일러스트" />
+        </section>
+
+        <section class="overview" aria-label="진행 현황">
+          <div class="overview-heading">
+            <div>
+              <span class="section-kicker">MY PROGRESS</span>
+              <h2>나의 진행 현황</h2>
+            </div>
+            <strong class="progress-number" id="progress-percent">0%</strong>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="할 일 완료율" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="overview-footer">
+            <span>전체 <strong id="stat-total">0</strong>개</span>
+            <span>완료 <strong id="stat-done">0</strong>개</span>
+            <span>남음 <strong id="stat-left">0</strong>개</span>
+          </div>
+        </section>
+
+        <section class="composer card-surface" aria-labelledby="new-task-title">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">ADD SOMETHING NEW</span>
+              <h2 id="new-task-title">새 할 일 추가</h2>
+            </div>
+            <span class="plus-decor" aria-hidden="true">＋</span>
+          </div>
+          <form id="task-form">
+            <label class="sr-only" for="task-title">할 일 내용</label>
+            <input id="task-title" name="title" class="task-title-input" type="text" maxlength="120" placeholder="어떤 일을 해볼까요?" autocomplete="off" required />
+            <div class="composer-bottom">
+              <div class="form-options">
+                <label class="field-with-icon">
+                  <span class="sr-only">분류</span>
+                  <select name="category" aria-label="할 일 분류">
+                    <option value="work">💼 업무</option>
+                    <option value="study">📚 공부</option>
+                    <option value="personal">🌿 개인</option>
+                  </select>
+                </label>
+                <label class="field-with-icon">
+                  <span class="sr-only">중요도</span>
+                  <select name="priority" aria-label="중요도">
+                    <option value="normal">보통 중요도</option>
+                    <option value="high">높은 중요도</option>
+                    <option value="low">낮은 중요도</option>
+                  </select>
+                </label>
+                <label class="field-with-icon date-field">
+                  <span class="sr-only">마감일</span>
+                  <input name="due" type="date" aria-label="마감일 (선택)" />
+                </label>
+              </div>
+              <button class="add-button" type="submit"><span aria-hidden="true">＋</span> 할 일 추가</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="tasks-section" aria-labelledby="list-title">
+          <div class="list-heading">
+            <div>
+              <span class="section-kicker">YOUR CHECKLIST</span>
+              <h2 id="list-title">모든 할 일 <span class="list-count" id="visible-count">0</span></h2>
+            </div>
+            <button type="button" id="clear-completed" class="text-button" hidden>완료 항목 정리</button>
+          </div>
+          <div class="list-tools">
+            <div class="category-filters" role="group" aria-label="분류 필터">
+              <button class="filter-chip is-selected" type="button" data-category="all" aria-pressed="true">전체</button>
+              <button class="filter-chip" type="button" data-category="work" aria-pressed="false">업무</button>
+              <button class="filter-chip" type="button" data-category="study" aria-pressed="false">공부</button>
+              <button class="filter-chip" type="button" data-category="personal" aria-pressed="false">개인</button>
+            </div>
+            <label class="search-field">
+              <span aria-hidden="true">⌕</span>
+              <span class="sr-only">할 일 검색</span>
+              <input id="task-search" type="search" placeholder="할 일 검색" autocomplete="off" />
+            </label>
+          </div>
+          <ul id="task-list" class="task-list" aria-live="polite"></ul>
+          <div id="empty-state" class="empty-state" hidden>
+            <div class="empty-icon" aria-hidden="true">☑</div>
+            <h3 id="empty-title">아직 할 일이 없어요</h3>
+            <p id="empty-description">첫 번째 할 일을 적고 오늘을 시작해볼까요?</p>
+            <button type="button" id="focus-add" class="empty-action">할 일 작성하기 <span aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+        <footer class="page-footer">작은 체크들이 모여 멋진 하루가 돼요. <span>♡</span></footer>
+      </main>
+    </div>
+
+    <template id="task-template">
+      <li class="task-card">
+        <label class="check-wrap" title="완료 상태 변경">
+          <input type="checkbox" class="task-check" />
+          <span class="custom-check" aria-hidden="true">✓</span>
+        </label>
+        <div class="task-details">
+          <p class="task-name"></p>
+          <div class="task-meta">
+            <span class="category-badge"></span>
+            <span class="due-badge" hidden></span>
+            <span class="priority-badge"></span>
+          </div>
+        </div>
+        <div class="task-actions">
+          <button class="icon-button edit-task" type="button" aria-label="할 일 수정" title="수정">✎</button>
+          <button class="icon-button delete-task" type="button" aria-label="할 일 삭제" title="삭제">×</button>
+        </div>
+      </li>
+    </template>
+
+    <dialog id="edit-dialog" class="edit-dialog" aria-labelledby="edit-dialog-title">
+      <form method="dialog" id="edit-form">
+        <div class="modal-heading">
+          <div><span class="section-kicker">MAKE A CHANGE</span><h2 id="edit-dialog-title">할 일 수정</h2></div>
+          <button type="button" id="close-dialog" class="modal-close" aria-label="닫기">×</button>
+        </div>
+        <label class="modal-field">할 일 내용<input name="title" type="text" maxlength="120" required /></label>
+        <div class="modal-grid">
+          <label class="modal-field">분류<select name="category"><option value="work">업무</option><option value="study">공부</option><option value="personal">개인</option></select></label>
+          <label class="modal-field">중요도<select name="priority"><option value="normal">보통</option><option value="high">높음</option><option value="low">낮음</option></select></label>
+        </div>
+        <label class="modal-field">마감일 (선택)<input name="due" type="date" /></label>
+        <div class="modal-buttons"><button type="button" id="cancel-edit" class="cancel-button">취소</button><button class="save-button" type="submit">변경사항 저장</button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+      <span id="toast-message"></span><button id="toast-undo" type="button" hidden>실행 취소</button>
+    </div>
+  </body>
+</html>
